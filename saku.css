@@ -40,7 +40,7 @@ table {
   font-size: 0.95rem;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
-  overflow: hidden; /* biar border radius kepake */
+  overflow: hidden;
 } thead {
   background: var(--primary);
   color: #fff;
@@ -60,10 +60,8 @@ table {
   padding: 0.7rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 } @media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-  } thead {
-    display: none; /* hide header di HP */
+  thead {
+    display: none;
   } tr {
     margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -73,7 +71,7 @@ table {
     border: none;
     padding: 0.5rem 0;
     position: relative;
-    padding-left: 45%;
+    padding: 5px;
   } td::before {
     content: attr(data-label);
     position: absolute;
