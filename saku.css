@@ -1,14 +1,11 @@
 /* Reset & Base */
-*,
-*::before,
-*::after {
+*,*::before,*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -18,12 +15,14 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
 /* === Variables === */
 :root {
   /* Colors */
   --bg: #111;
   --text: #f5f5f5;
   --primary: #4f46e5;
+  --glow: #18e320;
   --secondary: #9333ea;
   --accent: #22d3ee;
   --danger: #ef4444;
@@ -41,12 +40,11 @@ body {
   --font-heading: 'Segoe UI', sans-serif;
 
   /* Neon/Glow */
-  --ts: #0f0;
-  --neon: 0 0 5px var(--ts), 0 0 10px var(--ts), 0 0 20px var(--ts), 0 0 40px var(--ts);
+  --neon: 0 0 5px var(--glow), 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 40px var(--glow);
 }
+
 /* === Table Base === */
 table {
-  width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.95rem;
@@ -131,7 +129,7 @@ label {
 }
 
 /* === Buttons === */
-button {
+input[type="button"],input[type="reset"],button,input[type="submit"] {
   display: inline-block;
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius);
@@ -141,15 +139,7 @@ button {
   text-decoration: none;
   transition: 0.25s ease;
   box-shadow: var(--shadow);
-} button:hover {
-  background: var(--secondary);
-  transform: translateY(-2px);
-}
-/* Submit Button */
-input[type="button"],
-input[type="reset"],
-button,
-input[type="submit"] {
+} input[type="button"],input[type="reset"],button,input[type="submit"] {
   padding: 0.7rem 1.5rem;
   border-radius: var(--radius);
   border: none;
@@ -164,7 +154,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   background-color: var(--secondary);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1px);
 } button:active, input[type="submit"]:active {
   transform: translateY(1px);
   box-shadow: var(--shadow-sm);
@@ -394,147 +384,6 @@ img, video, iframe {
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
 }
-
-/* 🎨 Text Colors */
-.red       { color: #f00; }
-.dark-red  { color: #900; }
-.green     { color: #0f0; }
-.dark-green{ color: #090; }
-.blue      { color: #00f; }
-.dark-blue { color: #009; }
-.yellow    { color: #ff0; }
-.orange    { color: #f90; }
-.purple    { color: #90f; }
-.black     { color: #000; }
-.gray      { color: #666; }
-.white     { color: #fff; }
-
-/* 🎨 Background Colors */
-.bg-red       { background: #f00; color: #fff; }
-.bg-dark-red  { background: #900; color: #fff; }
-.bg-green     { background: #0f0; color: #000; }
-.bg-dark-green{ background: #090; color: #fff; }
-.bg-blue      { background: #00f; color: #fff; }
-.bg-dark-blue { background: #009; color: #fff; }
-.bg-yellow    { background: #ff0; color: #000; }
-.bg-orange    { background: #f90; color: #000; }
-.bg-purple    { background: #90f; color: #fff; }
-.bg-black     { background: #000; color: #fff; }
-.bg-gray      { background: #666; color: #fff; }
-.bg-white     { background: #fff; color: #000; }
-
-/* 🎨 Hover Text Colors */
-.hovred:hover       { color: #f00; }
-.hovdark-red:hover  { color: #900; }
-.hovgreen:hover     { color: #0f0; }
-.hovdark-green:hover{ color: #090; }
-.hovblue:hover      { color: #00f; }
-.hovdark-blue:hover { color: #009; }
-.hovyellow:hover    { color: #ff0; }
-.hovorange:hover    { color: #f90; }
-.hovpurple:hover    { color: #90f; }
-.hovblack:hover     { color: #000; }
-.hovgray:hover      { color: #666; }
-.hovwhite:hover     { color: #fff; }
-
-/* 🎨 Hover Background Colors */
-.hovbg-red:hover       { background: #f00; color: #fff; }
-.hovbg-dark-red:hover  { background: #900; color: #fff; }
-.hovbg-green:hover     { background: #0f0; color: #000; }
-.hovbg-dark-green:hover{ background: #090; color: #fff; }
-.hovbg-blue:hover      { background: #00f; color: #fff; }
-.hovbg-dark-blue:hover { background: #009; color: #fff; }
-.hovbg-yellow:hover    { background: #ff0; color: #000; }
-.hovbg-orange:hover    { background: #f90; color: #000; }
-.hovbg-purple:hover    { background: #90f; color: #fff; }
-.hovbg-black:hover     { background: #000; color: #fff; }
-.hovbg-gray:hover      { background: #666; color: #fff; }
-.hovbg-white:hover     { background: #fff; color: #000; }
-
-/* 🎯 Active Text Colors */
-.actred:active        { color: #f00; }
-.actdark-red:active   { color: #900; }
-.actgreen:active      { color: #0f0; }
-.actdark-green:active { color: #090; }
-.actblue:active       { color: #00f; }
-.actdark-blue:active  { color: #009; }
-.actyellow:active     { color: #ff0; }
-.actorange:active     { color: #f90; }
-.actpurple:active     { color: #90f; }
-.actblack:active      { color: #000; }
-.actgray:active       { color: #666; }
-.actwhite:active      { color: #fff; }
-
-/* 🎯 Active Background Colors */
-.actbg-red:active        { background: #f00; color: #fff; }
-.actbg-dark-red:active   { background: #900; color: #fff; }
-.actbg-green:active      { background: #0f0; color: #000; }
-.actbg-dark-green:active { background: #090; color: #fff; }
-.actbg-blue:active       { background: #00f; color: #fff; }
-.actbg-dark-blue:active  { background: #009; color: #fff; }
-.actbg-yellow:active     { background: #ff0; color: #000; }
-.actbg-orange:active     { background: #f90; color: #000; }
-.actbg-purple:active     { background: #90f; color: #fff; }
-.actbg-black:active      { background: #000; color: #fff; }
-.actbg-gray:active       { background: #666; color: #fff; }
-.actbg-white:active      { background: #fff; color: #000; }
-
-/* 🌈 Custom Text Colors */
-.pink        { color: #e91e63; }      /* hot pink */
-.teal        { color: #009688; }      /* teal */
-.cyan        { color: #00bcd4; }      /* cyan */
-.indigo      { color: #3f51b5; }      /* indigo */
-.lime        { color: #cddc39; }      /* lime */
-.amber       { color: #ffc107; }      /* amber */
-.brown       { color: #795548; }      /* brown */
-.deep-orange { color: #ff5722; }      /* deep orange */
-.deep-purple { color: #673ab7; }      /* deep purple */
-.light-blue  { color: #03a9f4; }      /* light blue */
-.silver      { color: #c0c0c0; }      /* silver */
-.gold        { color: #ffd700; }      /* gold */
-
-/* 🌈 Custom Background Colors */
-.bg-pink        { background: #e91e63; color: #fff; }
-.bg-teal        { background: #009688; color: #fff; }
-.bg-cyan        { background: #00bcd4; color: #fff; }
-.bg-indigo      { background: #3f51b5; color: #fff; }
-.bg-lime        { background: #cddc39; color: #000; }
-.bg-amber       { background: #ffc107; color: #000; }
-.bg-brown       { background: #795548; color: #fff; }
-.bg-deep-orange { background: #ff5722; color: #fff; }
-.bg-deep-purple { background: #673ab7; color: #fff; }
-.bg-light-blue  { background: #03a9f4; color: #fff; }
-.bg-silver      { background: #c0c0c0; color: #000; }
-.bg-gold        { background: #ffd700; color: #000; }
-
-/* 🖱️ Hover Custom Backgrounds */
-.hovbg-pink:hover        { background: #e91e63; color: #fff; }
-.hovbg-teal:hover        { background: #009688; color: #fff; }
-.hovbg-cyan:hover        { background: #00bcd4; color: #fff; }
-.hovbg-indigo:hover      { background: #3f51b5; color: #fff; }
-.hovbg-lime:hover        { background: #cddc39; color: #000; }
-.hovbg-amber:hover       { background: #ffc107; color: #000; }
-.hovbg-brown:hover       { background: #795548; color: #fff; }
-.hovbg-deep-orange:hover { background: #ff5722; color: #fff; }
-.hovbg-deep-purple:hover { background: #673ab7; color: #fff; }
-.hovbg-light-blue:hover  { background: #03a9f4; color: #fff; }
-.hovbg-silver:hover      { background: #c0c0c0; color: #000; }
-.hovbg-gold:hover        { background: #ffd700; color: #000; }
-
-/* 🎯 Active Custom Backgrounds */
-.actbg-pink:active        { background: #e91e63; color: #fff; }
-.actbg-teal:active        { background: #009688; color: #fff; }
-.actbg-cyan:active        { background: #00bcd4; color: #fff; }
-.actbg-indigo:active      { background: #3f51b5; color: #fff; }
-.actbg-lime:active        { background: #cddc39; color: #000; }
-.actbg-amber:active       { background: #ffc107; color: #000; }
-.actbg-brown:active       { background: #795548; color: #fff; }
-.actbg-deep-orange:active { background: #ff5722; color: #fff; }
-.actbg-deep-purple:active { background: #673ab7; color: #fff; }
-.actbg-light-blue:active  { background: #03a9f4; color: #fff; }
-.actbg-silver:active      { background: #c0c0c0; color: #000; }
-.actbg-gold:active        { background: #ffd700; color: #000; }
-
 
 /* Font size */
 .text-xs { font-size: 0.75rem; }   /* 12px */
