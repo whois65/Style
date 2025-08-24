@@ -59,8 +59,8 @@ table {
   padding: 0.8rem 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-} thead th:hover {
-  transform: scale(2);
+} thead:hover {
+  transform: translateY(-1px), scale(2px);
 } tbody tr {
   background: rgba(255, 255, 255, 0.03);
   transition: 0.25s ease;
